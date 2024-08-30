@@ -9,8 +9,6 @@
 {{- $fullName := include "wordpress.fullname" $ -}}
 {{- $svcPort := $top.Values.service.port -}}
 {{- if semverCompare ">=1.19-0" $top.Capabilities.KubeVersion.GitVersion -}}
-apiVersion: networking.k8s.io/v1
-{{- else -}}
 apiVersion: extensions/v1beta1
 {{- end }}
 kind: Ingress
